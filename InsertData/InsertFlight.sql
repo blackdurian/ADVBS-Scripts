@@ -52,6 +52,31 @@ INSERT INTO Flight (Id, AircraftId, Code, FlightState, FirstClassPrice, Business
      VALUES (9, 5,'OD1622','COMPLETED',1200,1000,900,700,8,'2022-09-18 07:34:09 +08:0','2022-09-18 13:34:09 +08:0'
            ,1,0.4,0.3,0.1,1,1)
 GO
+INSERT INTO Flight (Id, AircraftId, Code, FlightState, FirstClassPrice, BusinessClassPrice,PremiumClassPrice, EconomyClassPrice, RouteId, DepartureTime, ArrivalTime
+           ,NumOfMeal,CancelFeeChargeRate,ChangeFeeChargeRate,InfantChargeRate,HasUnaccompaniedMinorService,HasWheelchairService)
+     VALUES (10, 1,'MH2043','COMPLETED',1200,1000,900,700,8,'2022-09-18 07:34:09 +08:0','2022-09-18 13:34:09 +08:0'
+           ,1,0.4,0.3,0.1,1,1)
+GO
+INSERT INTO Flight (Id, AircraftId, Code, FlightState, FirstClassPrice, BusinessClassPrice,PremiumClassPrice, EconomyClassPrice, RouteId, DepartureTime, ArrivalTime
+           ,NumOfMeal,CancelFeeChargeRate,ChangeFeeChargeRate,InfantChargeRate,HasUnaccompaniedMinorService,HasWheelchairService)
+     VALUES (11, 1,'MH2043','COMPLETED',1200,1000,900,700,8,'2022-09-18 07:34:09 +08:0','2022-09-18 13:34:09 +08:0'
+           ,1,0.4,0.3,0.1,1,1)
+GO
+INSERT INTO Flight (Id, AircraftId, Code, FlightState, FirstClassPrice, BusinessClassPrice,PremiumClassPrice, EconomyClassPrice, RouteId, DepartureTime, ArrivalTime
+           ,NumOfMeal,CancelFeeChargeRate,ChangeFeeChargeRate,InfantChargeRate,HasUnaccompaniedMinorService,HasWheelchairService)
+     VALUES (12, 1,'MH2043','COMPLETED',1200,1000,900,700,8,'2022-09-18 07:34:09 +08:0','2022-09-18 13:34:09 +08:0'
+           ,1,0.4,0.3,0.1,1,1)
+GO
+INSERT INTO Flight (Id, AircraftId, Code, FlightState, FirstClassPrice, BusinessClassPrice,PremiumClassPrice, EconomyClassPrice, RouteId, DepartureTime, ArrivalTime
+           ,NumOfMeal,CancelFeeChargeRate,ChangeFeeChargeRate,InfantChargeRate,HasUnaccompaniedMinorService,HasWheelchairService)
+     VALUES (13, 2,'MH2043','COMPLETED',1200,1000,900,700,8,'2022-09-18 07:34:09 +08:0','2022-09-18 13:34:09 +08:0'
+           ,1,0.4,0.3,0.1,1,1)
+GO
+INSERT INTO Flight (Id, AircraftId, Code, FlightState, FirstClassPrice, BusinessClassPrice,PremiumClassPrice, EconomyClassPrice, RouteId, DepartureTime, ArrivalTime
+           ,NumOfMeal,CancelFeeChargeRate,ChangeFeeChargeRate,InfantChargeRate,HasUnaccompaniedMinorService,HasWheelchairService)
+     VALUES (14, 2,'MH2043','COMPLETED',1200,1000,900,700,8,'2022-09-18 07:34:09 +08:0','2022-09-18 13:34:09 +08:0'
+           ,1,0.4,0.3,0.1,1,1)
+GO
 SET NOCOUNT OFF
 GO
 SET IDENTITY_INSERT Flight OFF

@@ -42,9 +42,9 @@ AS
 	INNER JOIN Flight ON Flight.Id = Ticket.FlightId
 	INNER JOIN  Aircraft ON Aircraft.Id = Flight.AircraftId
 	INNER JOIN  Airline ON Airline.Id = Aircraft.AirlineId 
+	WHERE Airline.Name = 'Malaysia Airlines'  
 )
 SELECT FlightId,Airline,AircraftName, AircraftCode, ClassCode, ExpectedRevenue, SUM(TicketPrice) AS TotalRevenue  FROM RevenueReport
-WHERE Airline = 'Malaysia Airlines' AND FlightId = 1
 GROUP BY FlightId, Airline,AircraftName, AircraftCode, ClassCode, ExpectedRevenue 
 
 GO 
@@ -78,9 +78,6 @@ LEFT JOIN Airline ON Airline.Id = Aircraft.AirlineId
 WHERE Route.OriginCity = 'PEN' AND Route.DestinationCity = 'KUL' AND CAST(Flight.DepartureTime AS date) BETWEEN '2022-06-18' AND '2022-08-18'
 GROUP BY Airline.Name
 ORDER BY Frequency DESC
-
-
-
 
 GO
 --v.	Create a query which provides, for each age category of passengers, the following information:
@@ -132,7 +129,7 @@ GO
 -- Get Total,Average,Maximum, Minimum Travel Distance For Each Aircraft by a given Airline and Date Range -- TODO: Insert more testing data
 SET STATISTICS IO ON
 GO
-DECLARE @airline VARCHAR(200) = 'Malaysia Airlines', @start DATE = '2022-06-18', @end DATE  = '2022-08-18'; -- scope
+DECLARE @airline VARCHAR(200) = 'Malaysia Airlines', @start DATE = '2022-06-18', @end DATE  = '2022-12-18'; -- scope
 WITH FlightCTE AS -- use small join table
 ( 
 	SELECT AircraftId, AirlineId, RouteId FROM Flight 
@@ -146,13 +143,14 @@ AirlineCTE AS -- use small join table
 SELECT 
 	AirlineCTE.Name, 
 	FlightCTE.AircraftId, 
-	SUM(Route.DistanceMiles) OVER(PARTITION BY FlightCTE.AircraftId) AS TotalDistance,
-	AVG(Route.DistanceMiles) OVER(PARTITION BY FlightCTE.AircraftId) AS 'Avg',
-	MIN(Route.DistanceMiles) OVER(PARTITION BY FlightCTE.AircraftId) AS 'Min',
-	MAX(Route.DistanceMiles) OVER(PARTITION BY FlightCTE.AircraftId) AS 'Max'
+	SUM(Route.DistanceMiles) AS TotalDistance,
+	AVG(Route.DistanceMiles) AS 'Avg',
+	MIN(Route.DistanceMiles) AS 'Min',
+	MAX(Route.DistanceMiles) AS 'Max'
 FROM FlightCTE 
 INNER JOIN AirlineCTE ON FlightCTE.AirlineId = AirlineCTE.Id
 INNER JOIN Route ON Route.Id = FlightCTE.RouteId
+GROUP BY FlightCTE.AircraftId,AirlineCTE.Name
 ORDER BY TotalDistance
 GO
 SET STATISTICS IO OFF
