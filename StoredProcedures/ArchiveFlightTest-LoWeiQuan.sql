@@ -28,12 +28,12 @@ GO
 -- insert test data
 INSERT INTO Flight (AircraftId, Code, FlightState, FirstClassPrice, BusinessClassPrice,PremiumClassPrice, EconomyClassPrice, RouteId, DepartureTime, ArrivalTime
            ,NumOfMeal,CancelFeeChargeRate,ChangeFeeChargeRate,InfantChargeRate,HasUnaccompaniedMinorService,HasWheelchairService)
-     VALUES (5,'MH123', 'DRAFT',1200,1000,900,700,5,'2021-01-18 07:34:09 +08:0','2021-01-18 13:34:09 +08:0'
+     VALUES (5,'MH123', 'COMPLETED',1200,1000,900,700,5,'2021-01-18 07:34:09 +08:0','2021-01-18 13:34:09 +08:0'
            ,1,0.4,0.3,0.1,1,1)
 GO
 INSERT INTO Flight (AircraftId, Code, FlightState, FirstClassPrice, BusinessClassPrice,PremiumClassPrice, EconomyClassPrice, RouteId, DepartureTime, ArrivalTime
            ,NumOfMeal,CancelFeeChargeRate,ChangeFeeChargeRate,InfantChargeRate,HasUnaccompaniedMinorService,HasWheelchairService)
-     VALUES (5,'MH143','DRAFT',1200,1000,900,700,5,'2021-01-17 07:34:09 +08:0','2021-01-17 13:34:09 +08:0'
+     VALUES (5,'MH143','COMPLETED',1200,1000,900,700,5,'2021-01-17 07:34:09 +08:0','2021-01-17 13:34:09 +08:0'
            ,1,0.4,0.3,0.1,1,1)
 GO
 INSERT INTO Flight (AircraftId, Code, FlightState, FirstClassPrice, BusinessClassPrice,PremiumClassPrice, EconomyClassPrice, RouteId, DepartureTime, ArrivalTime
