@@ -1,5 +1,7 @@
 USE TSI
 GO
+BEGIN TRAN
+GO
 SET IDENTITY_INSERT ItineraryInvoice ON
 GO
 SET NOCOUNT ON
@@ -19,3 +21,7 @@ GO
 SET NOCOUNT OFF
 GO
 SET IDENTITY_INSERT ItineraryInvoice OFF
+GO
+COMMIT TRAN
+PRINT 'ItineraryInvoice is inserted'
+GO

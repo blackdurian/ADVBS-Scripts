@@ -1,6 +1,7 @@
 USE TSI
 GO
-
+BEGIN TRAN
+GO
 DROP TRIGGER IF EXISTS MealTypeCheck
 GO
 
@@ -129,5 +130,7 @@ BEGIN
 	ROLLBACK
 END
 GO
-
+COMMIT TRAN
+PRINT 'TriggerConstantValueCheck is created'
+GO
 

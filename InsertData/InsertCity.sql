@@ -1,5 +1,7 @@
 USE TSI
 GO
+BEGIN TRAN
+GO
 SET NOCOUNT ON
 GO
 DELETE FROM City
@@ -21,4 +23,6 @@ GO
 INSERT City (Code, Name, Country) VALUES ('BAL', 'Bali','Indonesia')
 GO
 SET NOCOUNT OFF
+GO
+COMMIT TRAN
 GO

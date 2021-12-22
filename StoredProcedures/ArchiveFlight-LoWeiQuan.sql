@@ -1,5 +1,7 @@
 USE TSI
 GO
+BEGIN TRAN
+GO
 DROP PROCEDURE IF EXISTS  uspArchiveFlight
 GO
 CREATE PROCEDURE uspArchiveFlight
@@ -114,5 +116,8 @@ BEGIN
 		Print @message
 		RETURN @error_id
 END
+GO
+COMMIT TRAN
+PRINT 'uspArchiveFlight is created'
 GO
 

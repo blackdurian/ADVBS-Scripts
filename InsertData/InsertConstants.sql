@@ -1,7 +1,9 @@
 USE TSI
 GO
---SET NOCOUNT ON
---GO
+BEGIN TRAN
+GO
+SET NOCOUNT ON
+GO
 TRUNCATE TABLE Constants -- DELETE TABLE Constants
 GO
 INSERT Constants (
@@ -110,4 +112,9 @@ VALUES
 ('TicketState', 'Overdue', 'OVERDUE', 'Constant value for TicketState'),
 ('TicketState', 'Cancelled By Passenger', 'CANCELLED_BY_PASSENGER', 'Constant value for TicketState'),
 ('TicketState', 'Changed By Passenger', 'CHANGED_BY_PASSENGER', 'Constant value for TicketState')
+GO
+SET NOCOUNT OFF
+GO
+COMMIT TRAN
+PRINT 'Constants is inserted'
 GO

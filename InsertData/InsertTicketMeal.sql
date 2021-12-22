@@ -1,5 +1,7 @@
 USE TSI
 GO
+BEGIN TRAN
+GO
 SET NOCOUNT ON
 GO
 DELETE FROM TicketMeal
@@ -15,3 +17,7 @@ GO
 INSERT TicketMeal (TicketId, MealId) VALUES (5, 5)
 GO
 SET NOCOUNT OFF
+GO
+COMMIT TRAN
+PRINT 'TicketMeal is inserted'
+GO
