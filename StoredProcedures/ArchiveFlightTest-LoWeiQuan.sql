@@ -2,7 +2,7 @@ USE TSI
 GO
 DROP TABLE IF EXISTS ArchiveFlight
 GO
--- insert archive table
+-- create archive table
 CREATE TABLE ArchiveFlight(
 	Id INT NOT NULL,
 	AircraftId INT NOT NULL,
@@ -42,6 +42,11 @@ INSERT INTO Flight (AircraftId, Code, FlightState, FirstClassPrice, BusinessClas
            ,1,0.4,0.3,0.1,1,1)
 GO
 
+-- before archive
+SELECT * FROM Flight
+SELECT * FROM ArchiveFlight
+GO
+-- execute stored procedure
 DECLARE	@return_value int,
 		@error_id int
 
@@ -50,7 +55,7 @@ EXEC	@return_value = uspArchiveFlight
 		@archivedDate = '2021-01-18 13:34:10 +08:0',
 		@maxRecordPerRun = 2 --100
 
-SELECT	@error_id as N'@error_id'
+SELECT	@error_id as '@error_id'
 
 SELECT	'Return Value' = @return_value
 
