@@ -71,10 +71,10 @@ SELECT
 	Airline.Name,  
 	COUNT(Ticket.Id) AS Frequency
 FROM Ticket
-LEFT JOIN Flight ON Flight.Id = Ticket.FlightId
-LEFT JOIN Route ON Route.Id = Flight.RouteId
-LEFT JOIN Aircraft ON Aircraft.Id = Flight.AircraftId
-LEFT JOIN Airline ON Airline.Id = Aircraft.AirlineId 
+INNER JOIN Flight ON Flight.Id = Ticket.FlightId
+INNER JOIN Route ON Route.Id = Flight.RouteId
+INNER JOIN Aircraft ON Aircraft.Id = Flight.AircraftId
+INNER JOIN Airline ON Airline.Id = Aircraft.AirlineId 
 WHERE Route.OriginCity = 'PEN' AND Route.DestinationCity = 'KUL' AND CAST(Flight.DepartureTime AS date) BETWEEN '2022-06-18' AND '2022-08-18'
 GROUP BY Airline.Name
 ORDER BY Frequency DESC
