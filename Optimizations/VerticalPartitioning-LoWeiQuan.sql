@@ -1,5 +1,5 @@
-
-
+USE TSI
+GO
 -- Create partition table,  flight table had divine into 2 vertically table
 CREATE TABLE FlightInfo(
 	FlightId INT NOT NULL PRIMARY KEY,
@@ -13,7 +13,7 @@ CREATE TABLE FlightInfo(
 	HasUnaccompaniedMinorService BIT NOT NULL,
 	HasWheelchairService BIT NOT NULL
  )
-
+GO
  CREATE TABLE FlightCharge( 
 	FlightId INT NOT NULL PRIMARY KEY,
 	FirstClassPrice MONEY NOT NULL,
@@ -24,27 +24,16 @@ CREATE TABLE FlightInfo(
 	ChangeFeeChargeRate  DECIMAL (5,4) NOT NULL CHECK (ChangeFeeChargeRate >= 0 and ChangeFeeChargeRate < 1) , --(ChangeFeeChargeRate between 0 and 1)
 	InfantChargeRate DECIMAL (5,4) NOT NULL CHECK (InfantChargeRate >= 0 and InfantChargeRate < 1) --(InfantChargeRate between 0 and 1)
  )
+GO
+INSERT FlightInfo (FlightId, AircraftId, Code, FlightState, RouteId, DepartureTime, ArrivalTime,
+	NumOfMeal, HasUnaccompaniedMinorService, HasWheelchairService) 
+SELECT Id, AircraftId, Code, FlightState, RouteId,	DepartureTime, ArrivalTime,	
+	NumOfMeal, HasUnaccompaniedMinorService, HasWheelchairService FROM Flight 
+GO
+INSERT FlightCharge(FlightId, FirstClassPrice, BusinessClassPrice, PremiumClassPrice, EconomyClassPrice,
+	CancelFeeChargeRate, ChangeFeeChargeRate, InfantChargeRate) 
+SELECT Id, FirstClassPrice, BusinessClassPrice, PremiumClassPrice, EconomyClassPrice,
+	CancelFeeChargeRate, ChangeFeeChargeRate, InfantChargeRate FROM Flight
+GO
 
 
- INSERT FlightInfo (
-    FlightId,
-	AircraftId,
-	Code,
-	FlightState,
-	RouteId,
-	DepartureTime,
-	ArrivalTime,
-	NumOfMeal,
-	HasUnaccompaniedMinorService,
-	HasWheelchairService
-) SELECT    Id,
-	AircraftId,
-	Code,
-	FlightState,
-	RouteId,
-	DepartureTime,
-	ArrivalTime,
-	NumOfMeal,
-	HasUnaccompaniedMinorService,
-	HasWheelchairService 
-FROM Flight 
