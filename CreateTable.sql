@@ -115,7 +115,7 @@ CREATE TABLE Airline(
 	Name VARCHAR(200) NOT NULL,
 	UnaccompaniedMinorServiceFee MONEY NOT NULL,
 	WheelchairServiceFee MONEY NOT NULL,
-	MaxPassenger VARCHAR(10) NOT NULL
+	MaxPassengerPerBooking VARCHAR(10) NOT NULL
 )
 GO 
 
