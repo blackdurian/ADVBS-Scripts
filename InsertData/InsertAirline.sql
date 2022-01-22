@@ -8,17 +8,17 @@ SET NOCOUNT ON
 GO
 DELETE FROM Airline 
 GO
-INSERT Airline (Id, Name, UnaccompaniedMinorServiceFee, WheelchairServiceFee) VALUES (1, 'AirAsia Airlines', 200,50)
+INSERT Airline (Id, Name, UnaccompaniedMinorServiceFee, WheelchairServiceFee, MaxPassenger) VALUES (1, 'AirAsia Airlines', 200,50, 'True')
 GO
-INSERT Airline (Id, Name, UnaccompaniedMinorServiceFee, WheelchairServiceFee) VALUES (2, 'Malaysia Airlines', 80,0)
+INSERT Airline (Id, Name, UnaccompaniedMinorServiceFee, WheelchairServiceFee, MaxPassenger) VALUES (2, 'Malaysia Airlines', 80,0, 'True')
 GO
-INSERT Airline (Id, Name, UnaccompaniedMinorServiceFee, WheelchairServiceFee) VALUES (3, 'Singapore Airlines', 250,20)
+INSERT Airline (Id, Name, UnaccompaniedMinorServiceFee, WheelchairServiceFee, MaxPassenger) VALUES (3, 'Singapore Airlines', 250,20, 'True')
 GO
-INSERT Airline (Id, Name, UnaccompaniedMinorServiceFee, WheelchairServiceFee) VALUES (4, 'Japan Airlines', 100,0)
+INSERT Airline (Id, Name, UnaccompaniedMinorServiceFee, WheelchairServiceFee, MaxPassenger) VALUES (4, 'Japan Airlines', 100,0, 'True')
 GO
-INSERT Airline (Id, Name, UnaccompaniedMinorServiceFee, WheelchairServiceFee) VALUES (5, 'Middle East Airlines', 100,0)
+INSERT Airline (Id, Name, UnaccompaniedMinorServiceFee, WheelchairServiceFee, MaxPassenger) VALUES (5, 'Middle East Airlines', 100,0, 'True')
 GO
-INSERT Airline (Id, Name, UnaccompaniedMinorServiceFee, WheelchairServiceFee) VALUES (6, 'Emirates Airline', 150,0)
+INSERT Airline (Id, Name, UnaccompaniedMinorServiceFee, WheelchairServiceFee, MaxPassenger) VALUES (6, 'Emirates Airline', 150,0, 'True')
 GO
 SET NOCOUNT OFF
 GO
