@@ -1,7 +1,7 @@
 @echo off
 
-set root=C:\Users\admin\My Drive\APU\Year3Sem2\CT004-3-3-ADBS\Assignment\Scripts
-set serverInstant=LAPTOP-LWQ
+set root=C:\Users\User\Desktop\ADVBS-Scripts
+set serverInstant=LAPTOP-F09J5GF9\SQLEXPRESS
 
 echo Create Table
 sqlcmd -S %serverInstant% -i "%root%\CreateTable.sql"
