@@ -1,3 +1,10 @@
+USE TSI
+GO
+BEGIN TRAN
+GO
+DROP TRIGGER IF EXISTS CheckMaxPassengerPerBooking
+GO
+
 CREATE TRIGGER CheckMaxPassengerPerBooking
 ON Ticket
 AFTER INSERT
@@ -27,3 +34,7 @@ AS
 			SELECT * FROM inserted WHERE ItineraryId=@ItineraryId;
 	SELECT * FROM inserted WHERE ItineraryId=@ItineraryId;
 	END
+GO
+COMMIT TRAN
+PRINT 'CheckMaxPassengerPerBooking is created'
+GO
