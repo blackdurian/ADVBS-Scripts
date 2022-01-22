@@ -1,3 +1,10 @@
+USE TSI
+GO
+BEGIN TRAN
+GO
+DROP PROCEDURE IF EXISTS CancelTicket
+GO
+
 CREATE PROC CancelTicket
 @ticketid int
 
@@ -25,3 +32,7 @@ ELSE
    Begin
     Print 'Invalid Ticket.' 
     END
+GO
+COMMIT TRAN
+PRINT 'CancelTicket is created'
+GO
