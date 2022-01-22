@@ -1,4 +1,4 @@
-ALTER PROC CancelTicket
+CREATE PROC CancelTicket
 @ticketid int
 
 AS
