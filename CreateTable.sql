@@ -3,7 +3,7 @@
 -- 	2 optimization strategy justification (10 marks)
 -- 	3 Provide a functional description of all the triggers. Each group member is required to design one constraint and trigger.    (10 marks)
 -- 	4 Each group member is required to create and use T-SQL feature (choose from: stored procedure; or function) 
---  5 provide appropriate test data // YaoJin done!
+--  5 provide appropriate test data // YaoJin 
 
 USE master
 GO
@@ -14,6 +14,7 @@ GO
 CREATE DATABASE TSI
 GO
 USE TSI
+GO
 -------- Table Create  -------- 
 -- add audit column if there are free time
 	-- [IsActive] [bit] NOT NULL,
@@ -23,47 +24,7 @@ USE TSI
 	-- [LastModifiedDate] [DATETIMEOFFSET(4)] NULL,
 
 -------- Constants Table  -------- 
--- ##Trigger 1# Add trigger to each related table for constants value check // Wei Quan
-
---## Value to be insert
-
---#Gender - ConstantsCategory
---	Male , M  - ConstantsTitle, ConstantsValue
---	Female , F  - ConstantsTitle, ConstantsValue
---	Unknown , U  - ConstantsTitle, ConstantsValue
-
---# TicketType 
---	In lap ,IL
---	In seat
-
---# ClassesOption
---	First
---	Business
---	Premium Economy
---	Economy
-
---# TripOption
---	One-way
---	Round-trip
---	Multi-city 
-
---# MealType
---	Non-vegetarian 
---	Vegetarian
--- 	Child-Special
-
---# FlightState
--- Arrival, OnBoarding
-
--- #JourneyState
--- 	Draft, Published, OnJourney, Completed, Cancelled 
-
---# ItineraryState
---	Issued, OnJourney ,Completed, CancelledByPassenger, ChangedByPassenger 
-
---# TicketState
---	Issued, CheckedIn, OnJourney, Completed, Overdue, CancelledByPassenger, ChangedByPassenger 
-
+-- ##Trigger 1# Add trigger to each related table for constants value check // Wei Quan 
 CREATE TABLE  Constants(
 	Id INT IDENTITY(1,1) NOT NULL PRIMARY KEY, 
 	ConstantsCategory VARCHAR(50) NOT NULL,
@@ -71,7 +32,6 @@ CREATE TABLE  Constants(
 	ConstantsValue VARCHAR(50) NOT NULL,
 	ConstantsDescription VARCHAR(MAX) NULL
 )
-
 GO
 
 CREATE TABLE City(
@@ -79,7 +39,6 @@ CREATE TABLE City(
 	Name VARCHAR(200) NOT NULL,
 	Country VARCHAR(200) NOT NULL
 )
-
 GO
 
 CREATE TABLE Route(
@@ -90,7 +49,6 @@ CREATE TABLE Route(
 	EstDurationHour INT NOT NULL CHECK(EstDurationHour >= 0),
 	EstDurationMin INT NOT NULL CHECK(EstDurationMin >= 0 and EstDurationMin < 60),-- 00 to 59
  )
-
  GO
 
 CREATE TABLE Passenger(
@@ -119,8 +77,7 @@ CREATE TABLE Airline(
 )
 GO 
 
-
-CREATE TABLE Aircraft( -- or Aircraft
+CREATE TABLE Aircraft(
 	Id INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	AirlineId INT NOT NULL REFERENCES Airline(Id),
 	AircraftState VARCHAR(50) NOT NULL,
@@ -133,10 +90,9 @@ CREATE TABLE Aircraft( -- or Aircraft
 	CONSTRAINT UC_Flight UNIQUE (Id,SerialNo)
  )	
 GO
-
 --	Stock procedures 1# host keeping, move the expired record to ArchiveJourney table  //WeiQuan 
 --	Trigger 2# on adding Valid Today < DepartureTime < ArrivalTime //YaoJin
-CREATE TABLE Flight( -- or Schedule
+CREATE TABLE Flight( 
 	Id INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	AircraftId INT NOT NULL REFERENCES Aircraft(Id),
 	Code VARCHAR(50) NOT NULL,
@@ -163,8 +119,7 @@ CREATE TABLE Itinerary(
 	ItineraryState VARCHAR(50) NOT NULL
 
 )
-GO
-	 
+GO 
 --   Trigger 3# valify multi-city Route
 --		a. Route Country must be connected  A To B, B To C, C To D
 --		b. Trip Order must be correct
@@ -200,7 +155,6 @@ CREATE TABLE TicketMeal(
 	CONSTRAINT FK_Ticket FOREIGN KEY (TicketId) REFERENCES Ticket (Id),
 	CONSTRAINT FK_Meal FOREIGN KEY (MealId) REFERENCES Meal (Id)
 )
-
 GO
 
 CREATE TABLE ItineraryInvoice(
