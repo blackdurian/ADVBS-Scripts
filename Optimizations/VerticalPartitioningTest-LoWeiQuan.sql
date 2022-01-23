@@ -7,7 +7,7 @@ DECLARE @i INT
 SET @i = 1
 
 BEGIN TRAN
-	WHILE @i<1000
+	WHILE @i<10000
 	BEGIN
 		INSERT INTO Flight
 		( AircraftId, Code, FlightState, FirstClassPrice, BusinessClassPrice,PremiumClassPrice, EconomyClassPrice, RouteId, DepartureTime, ArrivalTime,
