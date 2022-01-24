@@ -1,7 +1,7 @@
 # ADVBS assignment
 
 ## Database Installation
-1. Edit 'root' and 'serverInstant' in SqlRunner.bat file with text editor. 
+1. Edit `root` and `serverInstant` in SqlRunner.bat file with text editor. 
 
 ```sh
 set root=[your/project/root]
