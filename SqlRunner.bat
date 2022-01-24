@@ -23,10 +23,13 @@ sqlcmd -S %serverInstant% -i "%root%\InsertData\InsertTicketMeal.sql"
 echo Create Trigger
 sqlcmd -S %serverInstant% -i "%root%\Triggers\TriggerConstantsValueCheck-LoWeiQuan.sql"
 sqlcmd -S %serverInstant% -i "%root%\Triggers\TriggerCheckPassengerPerBooking-NeikJiJiet.sql"
+sqlcmd -S %serverInstant% -i "%root%\Triggers\TriggerFlightTimeCheck-YapYaoJin.sql"
 
 echo Create Stored Procedure
 sqlcmd -S %serverInstant% -i "%root%\StoredProcedures\ArchiveFlight-LoWeiQuan.sql"
 sqlcmd -S %serverInstant% -i "%root%\StoredProcedures\CancelTicket-NeikJiJiet.sql"
+sqlcmd -S %serverInstant% -i "%root%\StoredProcedures\ChangeTicket-YapYaoJin.sql"
+
 
 echo Execution Batch Exiting
 pause

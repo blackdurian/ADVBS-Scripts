@@ -31,11 +31,13 @@ AS
 		END
 	ElSE
 		BEGIN 
-			PRINT 'Success'
+			PRINT 'Flight Successfully Inserted'
 			 
 		END
 
 GO
 COMMIT TRAN
+PRINT 'FlightTimeCheck is created'
+GO
  --CAST(@dto AS DATETIME)
 -- GETDATE(),
