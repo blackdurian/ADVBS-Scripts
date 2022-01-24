@@ -110,19 +110,25 @@ GROUP BY ROLLUP (AirlineName, FlightId)
 
 GO
 --vi.	Create a query which shows the airline name offering maximum number of journey routes along with names of source and destination. (2 marks)
-
-SELECT TOP(1)
-	Airline.Name AS Airline,
+WITH cte(Airline,SourceCity,DestinationCity,JourneyMaxNum,RankNum) AS
+(
+  SELECT  
+	Airline.Name,
 	Route.OriginCity,
 	Route.DestinationCity,
-	COUNT(DISTINCT Flight.Id ) AS RouteCount
+	COUNT(DISTINCT Flight.Id ),  
+	DENSE_RANK() OVER (PARTITION BY Airline.Name ORDER BY COUNT(DISTINCT Flight.Id ) DESC)  
 FROM Flight
 INNER JOIN  Aircraft ON Aircraft.Id = Flight.AircraftId
 INNER JOIN  Airline ON Airline.Id = Aircraft.AirlineId 
 INNER JOIN Route ON Route.Id = Flight.RouteId
 GROUP BY Airline.Name ,	Route.OriginCity,Route.DestinationCity
-ORDER BY RouteCount DESC
-  
+)
+SELECT Airline,SourceCity,DestinationCity,JourneyMaxNum
+FROM cte
+WHERE RankNum = 1
+ORDER BY JourneyMaxNum DESC
+
 GO
 --vii. Develop one additional query of your own which provides information that would be useful for the business. 
 --	Marks will be awarded depending on the technical skills shown and the relevance of the query. (3 marks) 
