@@ -22,10 +22,16 @@ INSERT Passenger (Id, FName, LName, Gender, BOD, Email) VALUES (6, 'Wang','Leeho
 GO
 INSERT Passenger (Id, FName, LName, Gender, BOD, Email) VALUES (7, 'Trump','Donald ', 'M', '1948-11-12', 'trump@gmail.com')
 GO
+INSERT Passenger (Id, FName, LName, Gender, BOD, Email) VALUES (8, 'Ieuan','Tait ', 'M', '2019-11-12', 'Ieuan@gmail.com')
+GO
+INSERT Passenger (Id, FName, LName, Gender, BOD, Email) VALUES (9, 'Maddy','Beech ', 'M', '2010-11-12', 'Maddy@gmail.com')
+GO
+INSERT Passenger (Id, FName, LName, Gender, BOD, Email) VALUES (10, 'Vivien','Mcculloch ', 'M', '2021-11-12', 'Vivien@gmail.com')
+GO
 SET NOCOUNT OFF
 GO
-SET IDENTITY_INSERT Flight OFF
+SET IDENTITY_INSERT Passenger OFF
 GO
 COMMIT TRAN
-PRINT 'Flight is inserted'
+PRINT 'Passenger is inserted'
 GO

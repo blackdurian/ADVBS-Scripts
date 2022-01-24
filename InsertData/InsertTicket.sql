@@ -40,6 +40,22 @@ INSERT Ticket(Id, PassengerId, FlightId, TripOption, TripOrder, ClassesOption, T
 	NeedWheelchairService, DiscountedPrice, TicketPrice, ItineraryId) 
 	VALUES (8, 5, 1, 'ONE_WAY', 0, 'BUSINESS', 'IN_SEAT', 'ISSUED', 0, 0, 50, 100, 1)
 GO
+INSERT Ticket(Id, PassengerId, FlightId, TripOption, TripOrder, ClassesOption, TicketType, TicketState, NeedUnaccompaniedMinorService, 
+	NeedWheelchairService, DiscountedPrice, TicketPrice, ItineraryId) 
+	VALUES (9, 10, 15, 'ONE_WAY', 0, 'ECONOMY', 'IN_LAP', 'ISSUED', 0, 0, 50, 200, 4)
+GO
+INSERT Ticket(Id, PassengerId, FlightId, TripOption, TripOrder, ClassesOption, TicketType, TicketState, NeedUnaccompaniedMinorService, 
+	NeedWheelchairService, DiscountedPrice, TicketPrice, ItineraryId) 
+	VALUES (10, 9, 15, 'ONE_WAY', 0, 'ECONOMY', 'IN_LAP', 'ISSUED', 0, 0, 50, 300, 4)
+GO
+INSERT Ticket(Id, PassengerId, FlightId, TripOption, TripOrder, ClassesOption, TicketType, TicketState, NeedUnaccompaniedMinorService, 
+	NeedWheelchairService, DiscountedPrice, TicketPrice, ItineraryId) 
+	VALUES (11, 8, 15, 'ONE_WAY', 0, 'ECONOMY', 'IN_SEAT', 'ISSUED', 0, 0, 50, 300, 4)
+GO
+INSERT Ticket(Id, PassengerId, FlightId, TripOption, TripOrder, ClassesOption, TicketType, TicketState, NeedUnaccompaniedMinorService, 
+	NeedWheelchairService, DiscountedPrice, TicketPrice, ItineraryId) 
+	VALUES (12, 8, 15, 'ONE_WAY', 0, 'ECONOMY', 'IN_SEAT', 'ISSUED', 0, 0, 0, 700, 5)
+GO
 SET NOCOUNT OFF
 GO
 SET IDENTITY_INSERT Ticket OFF

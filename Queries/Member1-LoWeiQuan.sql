@@ -85,7 +85,7 @@ GO
 --		Result should contain both detailed breakup & summary for above mentioned categories along with overall summary.
 --		Hint: you may wish to use rollup or cube statements with a query.  
 --		Some marks will be awarded for the query structure, even if you cannot generate the totals.	(7 marks)
-DECLARE @airline VARCHAR(200) = 'Malaysia Airlines', @DepartureDate DATE  = '2022-06-18'; 
+DECLARE @airline VARCHAR(200) = 'Malaysia Airlines', @DepartureDate DATE  = '2022-06-28'; 
 WITH FlightReport (AirlineName, FlightId, PassengeId, PassengerAge) -- Report in given date and airline. 
 AS 
 (
