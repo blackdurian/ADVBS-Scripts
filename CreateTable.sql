@@ -173,7 +173,7 @@ GO
 
 --  Trigger 5# 1 Itinerary for valid 4 passengers only, not 4 tickets
 
---	 Stock procedures 2# buyTicket() getTicketTotalPrice and add new record  //Yao Jin
+--	 Stock procedures 2# getTicketTotalPrice() and add new record  //Yao Jin
 --	 Stock procedures 3# cancelTicket() update relate table
 --	 Stock procedures 3# changeTicket()
 CREATE TABLE Ticket(
