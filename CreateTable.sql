@@ -1,10 +1,3 @@
--- TODO: 
--- 	1 ERD (30 marks)
--- 	2 optimization strategy justification (10 marks)
--- 	3 Provide a functional description of all the triggers. Each group member is required to design one constraint and trigger.    (10 marks)
--- 	4 Each group member is required to create and use T-SQL feature (choose from: stored procedure; or function) 
---  5 provide appropriate test data // YaoJin 
-
 USE master
 GO
 ALTER DATABASE [TSI] SET  SINGLE_USER WITH ROLLBACK IMMEDIATE
