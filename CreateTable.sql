@@ -157,4 +157,7 @@ CREATE TABLE ItineraryInvoice(
 	ChangeCharge MONEY NULL,
 	ItineraryPrice MONEY NOT NULL
  )
- GO
+GO
+
+PRINT 'All Tables is created'
+GO

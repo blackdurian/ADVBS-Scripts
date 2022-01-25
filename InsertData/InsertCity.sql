@@ -25,4 +25,5 @@ GO
 SET NOCOUNT OFF
 GO
 COMMIT TRAN
+PRINT 'City is inserted'
 GO
