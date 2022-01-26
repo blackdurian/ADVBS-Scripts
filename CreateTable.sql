@@ -80,7 +80,7 @@ CREATE TABLE Aircraft(
 	NumOfBusinessSeat INT NOT NULL,
 	NumOfPremiumSeat INT NOT NULL,
 	NumOfEconomySeat INT NOT NULL,
-	CONSTRAINT UC_Flight UNIQUE (Id,SerialNo)
+	CONSTRAINT UC_Aircraft UNIQUE (Id,SerialNo)
  )	
 GO
 --	Stock procedures 1# host keeping, move the expired record to ArchiveJourney table  //WeiQuan 
