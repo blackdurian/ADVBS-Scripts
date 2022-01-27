@@ -10,7 +10,7 @@ DELETE FROM Ticket
 GO
 INSERT Ticket(Id, PassengerId, FlightId, TripOption, TripOrder, ClassesOption, TicketType, TicketState, NeedUnaccompaniedMinorService, 
 	NeedWheelchairService, DiscountedPrice, TicketPrice, ItineraryId) 
-	VALUES (1, 1, 1, 'ONE_WAY', 0, 'FIRST', 'IN_SEAT', 'ISSUED', 0, 0, 50, 100, 1)
+	VALUES (1, 1, 1, 'ONE_WAY', 0, 'FIRST', 'IN_SEAT', 'ISSUED', 1, 0, 50, 100, 1)
 GO
 INSERT Ticket(Id, PassengerId, FlightId, TripOption, TripOrder, ClassesOption, TicketType, TicketState, NeedUnaccompaniedMinorService, 
 	NeedWheelchairService, DiscountedPrice, TicketPrice, ItineraryId) 

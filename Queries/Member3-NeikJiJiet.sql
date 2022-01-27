@@ -32,7 +32,7 @@ CAST(F.DepartureTime AS DATE) = '2022-06-18' AND
 AL.Name='Malaysia Airlines'
 
 /*Q xix*/
-SELECT unaccompanied.AirlineName, COUNT(unaccompanied.Id)
+SELECT unaccompanied.AirlineName, COUNT(unaccompanied.Id) As Total
 FROM
 (SELECT P.Id, AL.Name AS AirlineName
 FROM Passenger P 
